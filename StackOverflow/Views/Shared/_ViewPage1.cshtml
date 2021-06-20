@@ -35,41 +35,29 @@
                     @if (Session["CurrentUserName"] == null)
                     {
                         <li class="nav-item active">
-                            <a class="nav-link" href="/account/login">Login</a>
+                            @Html.ActionLink("Login", "Login", "Account", new { }, new { @class = "nav-link", @id = "login" })
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/account/register">Register</a>
+                            @Html.ActionLink("Register", "Register", "Account", new { }, new { @class = "nav-link", @id = "register" })
                         </li>
                     }
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="~/Images/Avatar3.jpg" width="50" height="50" />
-                        </a>
-                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
-                            <li><a class="dropdown-item" href="/account/changeprofile">Change Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/account/changepassword">Change Password</a></li>
-                        </ul>
-                    </li>
+              
 
                     @if (Session["CurrentUserName"] != null)
                     {
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
                                 <img src="~/Images/Avatar3.jpg" width="50" height="50" />
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
-                                <li><a class="dropdown-item" href="/account/changeprofile">Change Profile</a></li>
+                                @Html.ActionLink("Logout", "Logout", "Account", new { }, new { @class = "dropdown-item", @id = "logout" })
+                                <li>
+                                @Html.ActionLink("ChangeProfile", "ChangeProfile", "Account", new { }, new { @class = "dropdown-item", @id = "changeProfile" })
+                                </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="/account/changepassword">Change Password</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     }
                 </ul>
@@ -81,9 +69,27 @@
         </div>
     </nav>
     @Scripts.Render("~/bundles/jquery")
-    <div class="container-fluid">
-        @RenderBody()
+<div class="container-fluid">
+    @if (ViewBag.errors != null)
+    {
+    <div class="container">
+        <div class="row">
+            <div class="col-12 justify-content-center">
+                <ul>
+                    @foreach (var error in ViewBag.errors)
+                    {
+                        foreach (var errorMsg in error)
+                        {
+                            <li class="alert alert-warning">@errorMsg.ErrorMessage</li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
+    }
+    @RenderBody()
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

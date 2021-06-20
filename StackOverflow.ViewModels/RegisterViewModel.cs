@@ -9,19 +9,18 @@ namespace StackOverflow.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [RegularExpression(@"^\\w{1,63}@[a-zA-Z0-9]{2,63}\\.[a-zA-Z]{2,63}(\\.[a-zA-Z]{2,63})?$")]
+        [Required(ErrorMessage ="Email 必填")]
+        [RegularExpression(@"^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$", ErrorMessage = "Email 格式錯誤")]
         public string Email { get; set; }
-        public string Password { get; set; }
         [Required]
         [Compare("Password")]
-        public String ConfirmPassword { get; set; }
+        public string Password { get; set; }
+        //public String ConfirmPassword { get; set; }
 
-        [Required]
-        [RegularExpression(@"^[a-zA-z]*$")]
+        [Required(ErrorMessage="姓名必填")]
         public string Name { get; set; }
  
-        [Required]
+        [Required(ErrorMessage ="電話必填")]
         public string Mobile { get; set; }
         
     }

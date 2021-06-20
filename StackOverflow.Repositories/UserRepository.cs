@@ -63,7 +63,7 @@ namespace StackOverflow.Repositories
 
         public List<User> GetUsers()
         {
-            List<User> us = db.Users.Where(temp => temp.isAdmin == false)
+            List<User> us = db.Users.Where(temp => temp.IsAdmin == false)
                 .OrderBy(temp => temp.Name)
                 .ToList();
             return us;

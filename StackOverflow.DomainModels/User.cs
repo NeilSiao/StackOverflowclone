@@ -18,6 +18,6 @@ namespace StackOverflow.DomainModels
         public string PasswordHash { get; set; }
         public String Name { get; set; }
         public string Mobile { get; set; }
-        public Boolean isAdmin { get; set; }
+        public Boolean IsAdmin { get; set; }
     }
 }

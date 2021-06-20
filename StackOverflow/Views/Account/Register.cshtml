@@ -1,0 +1,114 @@
+﻿
+
+    <div class="container">
+   
+        <div class="row justify-content-center" >
+            <div class="col-12" style="width:500px;">
+                <form class="row g-3 needs-validation" novalidate="novalidate" action="/account/register" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="col-12">
+                        <label for="txtName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="txtName" name="Name" required autofocus="autofocus">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid name!
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="txtEmail"  placeholder="Email" name="Email" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid Email!
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mobile" class="form-label">Mobile</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="mobile" name="Mobile" aria-describedby="inputGroupPrepend3" required>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks mobile number!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="txtPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="txtPassword" name="Password" placeholder="Enter Password" required minlength="6"
+                               >
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Password must contain at least 6 characters!
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="txtConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" name="ConfirmPassword" placeholder="Confirm Password" class="form-control" id="txtConfirmPassword">
+                        <div class="valid-feedback">
+                            Looks good!
+
+                        </div>
+                        <div class="invalid-feedback">
+                            Do not match password!
+                        </div>
+                    </div>
+          
+            
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#register").addClass("active");
+        $(document).on("submit", ".needs-validation", validate);
+
+        $('.needs-validation').find('input,select,textarea').on('focusout', function () {
+        // check element validity and change class
+        $(this).removeClass('is-valid is-invalid')
+                .addClass(this.checkValidity() ? 'is-valid' : 'is-invalid');
+            checkPassword();
+        });
+
+
+        $("#txtConfirmPassword").on("input", checkPassword);
+        function checkPassword(evt) {
+            console.log("123 check poassword", evt);
+            var confirm = $("#txtConfirmPassword").val();
+            var password = $("#txtPassword").val()
+            console.log(confirm, password);
+            if (confirm != password) {
+                console.log("get in");
+                $("#txtConfirmPassword").removeClass("is-valid").removeClass("is-invalid").addClass("is-invalid");
+                evt.preventDefault();
+            }
+        }
+
+        function validate(evt) {
+            if ($(".needs-validation")[0].checkValidity() == false || $(".email-exists").text() != "") {
+                evt.preventDefault();
+            }
+            checkPassword(evt);
+            $(".needs-validation")[0].classList.add("was-validated");
+        }
+
+
+        //$("#txtEmail").blur(function () {
+        //    $.ajax("/api/account?email=" + $("txtEmail").val(), type: "GET", success: function (response) {
+        //        if (response == "Not Found") {
+        //            $(".email")
+        //        }
+        //    }))
+        //})
+    </script>
