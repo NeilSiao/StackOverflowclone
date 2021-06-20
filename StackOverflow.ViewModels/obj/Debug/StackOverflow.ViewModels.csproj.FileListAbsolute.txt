@@ -1,0 +1,17 @@
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.ViewModels.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.ViewModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.ViewModels.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\EntityFramework.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.Repositories.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.DomainModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.Repositories.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.Repositories.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\EntityFramework.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.DomainModels.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\bin\Debug\StackOverflow.DomainModels.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\obj\Debug\StackOverflow.ViewModels.csprojAssemblyReference.cache
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\obj\Debug\StackOverflow.ViewModels.csproj.CopyComplete
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\obj\Debug\StackOverflow.ViewModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.ViewModels\obj\Debug\StackOverflow.ViewModels.pdb

@@ -1,0 +1,11 @@
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\StackOverflow.DomainModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\StackOverflow.DomainModels.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\obj\Debug\StackOverflow.DomainModels.csprojAssemblyReference.cache
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\obj\Debug\StackOverflow.DomainModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\obj\Debug\StackOverflow.DomainModels.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\StackOverflow.DomainModels.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\EntityFramework.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\EntityFramework.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.DomainModels\obj\Debug\StackOverflow.DomainModels.csproj.CopyComplete

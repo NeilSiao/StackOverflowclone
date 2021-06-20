@@ -1,0 +1,14 @@
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.Repositories.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.Repositories.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.Repositories.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\EntityFramework.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.DomainModels.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.DomainModels.pdb
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\StackOverflow.DomainModels.dll.config
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\EntityFramework.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\obj\Debug\StackOverflow.Repositories.csprojAssemblyReference.cache
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\obj\Debug\StackOverflow.Repositories.csproj.CopyComplete
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\obj\Debug\StackOverflow.Repositories.dll
+D:\Habbit\C_Sharp\StackOverflow\StackOverflow.Repositories\obj\Debug\StackOverflow.Repositories.pdb
