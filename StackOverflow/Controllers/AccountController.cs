@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using StackOverflow.ServiceLayers;
 using StackOverflow.ViewModels;
+using StackOverflow.CustomFilters;
 namespace StackOverflow.Controllers
 {
     public class AccountController : Controller
@@ -93,6 +94,7 @@ namespace StackOverflow.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [UserAuthorizationFilter]
 
         public ActionResult ChangeProfile()
         {
@@ -106,7 +108,37 @@ namespace StackOverflow.Controllers
             EditUserDetailsViewModel eudvm = new EditUserDetailsViewModel() { Name = uvm.Name, Email = uvm.Email, Mobile = uvm.Mobile, UserID = uvm.UserID };
             return View(eudvm);
         }
+        [UserAuthorizationFilter]
+        public ActionResult ChangePassword()
+        {
+            int uid = Convert.ToInt32(Session["CurrentUserID"]);
+            UserViewModel uvm = this.us.GetUserByUserID(uid);
+            if (uvm == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            EditUserPasswordViewModel eupvm = new EditUserPasswordViewModel() {  Email = uvm.Email, Password="",ConfirmPassword="", UserID = uvm.UserID };
+            return View(eupvm);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(EditUserPasswordViewModel eupvm)
+        {
+            if (ModelState.IsValid)
+            {
+                eupvm.UserID = Convert.ToInt32(Session["CurrentUserID"]);
+                this.us.UpdateUserPassword(eupvm);
+                //Session["CurrentUserName"] = eudvm.Name;
+                return RedirectToAction("Index", "Home");
+
+            }
+            else
+            {
+                ModelState.AddModelError("x", "Invalid Data");
+                return View(eupvm);
+            }
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

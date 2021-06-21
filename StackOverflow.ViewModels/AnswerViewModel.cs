@@ -13,7 +13,8 @@ namespace StackOverflow.ViewModels
 
         public int UserID { get; set; }
         public int QuestionID { get; set; }
-  
+
+        public int VotesCount { set; get; }
         public virtual UserViewModel User { get; set; }
 
         public virtual List<VoteViewModel> Votes {get;set;}

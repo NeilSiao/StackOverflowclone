@@ -27,10 +27,10 @@
                         @Html.ActionLink("Contact", "Contact", "Home", new { },new { @class = "nav-link", @id="contact"})
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="home/contact">Categories</a>
+                        @Html.ActionLink("Category", "Categories", "Home", new { }, new { @class = "nav-link", @id = "category" })
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="home/contact">Questions</a>
+                        @Html.ActionLink("Questions", "Questions", "Home", new { }, new { @class = "nav-link", @id = "questions" })
                     </li>
                     @if (Session["CurrentUserName"] == null)
                     {
@@ -61,8 +61,8 @@
                         </li>
                     }
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" action="/Home/Search" method="get">
+                    <input class="form-control me-2" type="search" name="str" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

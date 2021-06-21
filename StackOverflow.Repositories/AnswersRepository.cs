@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using StackOverflow.DomainModels;
+
 namespace StackOverflow.Repositories
 {
     public interface IAnswersRepository
@@ -58,10 +60,12 @@ namespace StackOverflow.Repositories
         }
         public void InsertAnswer(Answer a)
         {
-            
-                db.Answers.Add(a);
+            //a.AnswerText = HttpUtility.HtmlEncode(a.AnswerText.Replace("\r\n", "<br>\r\n"));
+            a.AnswerText = a.AnswerText;
+            db.Answers.Add(a);
                 db.SaveChanges();
             qr.UpdateQuestionAnswersCount(a.QuestionID, 1);
+            
         }
 
         public void UpdateAnswer(Answer a)
@@ -69,6 +73,7 @@ namespace StackOverflow.Repositories
             Answer aw = db.Answers.Where(temp => temp.AnswerID == a.AnswerID).FirstOrDefault();
             if (aw != null)
             {
+                //aw.AnswerText = HttpUtility.HtmlEncode(a.AnswerText.Replace("\r\n", "<br>\r\n"));
                 aw.AnswerText = a.AnswerText;
                 db.SaveChanges();
             }
