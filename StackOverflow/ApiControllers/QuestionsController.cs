@@ -11,7 +11,7 @@ namespace StackOverflow.ApiControllers
     {
 
         IAnswersService ans;
-
+        // TODO:: DI is not working in api controller.
         public QuestionsController()
         {
             this.ans = new AnswersService();

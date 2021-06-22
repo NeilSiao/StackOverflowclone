@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using StackOverflow.ServiceLayers;
 using StackOverflow.ViewModels;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 namespace StackOverflow.Controllers
 {
     public class HomeController : Controller
@@ -30,10 +33,16 @@ namespace StackOverflow.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public async Task<ActionResult> Contact()
         {
             ViewBag.Message = "Your contact page.";
-
+            var client = new HttpClient();
+            
+            var response =  await client.GetAsync("https://dog.ceo/api/breeds/image/random");
+            Console.WriteLine(response);
+            response.EnsureSuccessStatusCode();
+            Dog DogResult = await response.Content.ReadAsAsync<Dog>();
+            ViewBag.DogResult = DogResult;
             return View();
         }
         public ActionResult Categories()
