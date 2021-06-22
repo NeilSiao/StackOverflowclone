@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - StackOverflow</title>
+    @Styles.Render("~/Content/css")
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="~/Images/Avatar2.jpg" alt="Alternate Text" width="50" height="50" /> StackOverflow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-center align-items-center me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home",new { } ,new { @class = "nav-link", @id="home"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("About", "About", "Home", new { },new { @class = "nav-link", @id="about"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact", "Contact", "Home", new { },new { @class = "nav-link", @id="contact"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Category", "Categories", "Home", new { }, new { @class = "nav-link", @id = "category" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Questions", "Questions", "Home", new { }, new { @class = "nav-link", @id = "questions" })
+                    </li>
+                    @if (Session["CurrentUserName"] == null)
+                    {
+                        <li class="nav-item active">
+                            @Html.ActionLink("Login", "Login", "Account", new { }, new { @class = "nav-link", @id = "login" })
+                        </li>
+                        <li class="nav-item active">
+                            @Html.ActionLink("Register", "Register", "Account", new { }, new { @class = "nav-link", @id = "register" })
+                        </li>
+                    }
+
+              
+
+                    @if (Session["CurrentUserName"] != null)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="~/Images/Avatar3.jpg" width="50" height="50" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @Html.ActionLink("Logout", "Logout", "Account", new { }, new { @class = "dropdown-item", @id = "logout" })
+                                <li>
+                                @Html.ActionLink("ChangeProfile", "ChangeProfile", "Account", new { }, new { @class = "dropdown-item", @id = "changeProfile" })
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/account/changepassword">Change Password</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+                <form class="d-flex" action="/Home/Search" method="get">
+                    <input class="form-control me-2" type="search" name="str" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    @Scripts.Render("~/bundles/jquery")
+<div class="container-fluid">
+    @if (ViewBag.errors != null)
+    {
+    <div class="container">
+        <div class="row">
+            <div class="col-12 justify-content-center">
+                <ul>
+                    @foreach (var error in ViewBag.errors)
+                    {
+                        foreach (var errorMsg in error)
+                        {
+                            <li class="alert alert-warning">@errorMsg.ErrorMessage</li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    }
+    @RenderBody()
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

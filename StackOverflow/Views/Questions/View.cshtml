@@ -84,7 +84,7 @@
                     <div class="col-10">
                         @if (Convert.ToInt32(Session["CurrentUserID"]) == Model.Answers[i].UserID)
                         {
-                            <p class="answer" style="white-space:pre-wrap;">@Html.Raw(Model.Answers[i].AnswerText)</p>
+                            <p class="answer" style="white-space:pre-wrap;">@Model.Answers[i].AnswerText</p>
                             <button class="btn btn-info editbutton mb-2" data-bs-toggle="modal" data-bs-target="#EditModal">Edit</button>
                             <form class="needs-validation d-none" novalidate="novalidate" action="/questions/editanswer" method="post">
                                 <h4>Edit your answer</h4>
@@ -110,7 +110,7 @@
                         }
                         else
                         {
-                            <p class="answer" style="white-space:pre-wrap;">@Html.Raw(Model.Answers[i].AnswerText)</p>
+                            <p class="answer" style="white-space:pre-wrap;">@Model.Answers[i].AnswerText</p>
                         }
                     </div>
                     <hr />

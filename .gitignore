@@ -1,1 +1,10 @@
 .vs/
+/StackOverflow/obj/Debug/Package
+/StackOverflow.Repositories/bin/Release
+/StackOverflow.ServiceLayers/bin/Release
+/StackOverflow.ServiceLayers/obj/Release
+/StackOverflow.ViewModels/bin/Release
+/StackOverflow.Repositories/obj/Release
+/StackOverflow.DomainModels/obj/Release
+/StackOverflow.DomainModels/bin/Release
+/StackOverflow.ViewModels/obj/Release

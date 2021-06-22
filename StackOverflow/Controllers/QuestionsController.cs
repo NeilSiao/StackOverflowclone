@@ -34,6 +34,7 @@ namespace StackOverflow.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [UserAuthorizationFilter]
+        [ValidateInput(false)]
         public ActionResult AddAnswer(NewAnswerViewModel navm)
         {
             navm.UserID = Convert.ToInt32(Session["CurrentUserID"]);
@@ -81,6 +82,7 @@ namespace StackOverflow.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [UserAuthorizationFilter]
+        [ValidateInput(false)]
         public ActionResult Create(NewQuestionViewModel qvm)
         {
             if (ModelState.IsValid)
